@@ -1,0 +1,10 @@
+import { Link } from '@tanstack/react-router';
+import { ArrowLeft, ArrowUpRight } from 'lucide-react';
+import { SiteHeader, SiteFooter, ContactBand, ContactButton } from '@/components/site-shell';
+import { services } from '@/lib/services';
+import airlock from '@/assets/soteria-airlock.png';
+
+export function ServicePage({ service }: { service: keyof typeof services }) {
+  const data = services[service];
+  return <><SiteHeader /><main><section className="detail-hero"><div className="site-container"><Link to="/" className="back-link"><ArrowLeft size={15} />Grafinate Partners</Link><div className="eyebrow">{data.eyebrow}</div><h1>{data.title}</h1><p>{data.description}</p><div className="hero-actions"><ContactButton label="Explore a partnership" /></div></div></section><section className="section site-container"><div className="section-heading"><div><div className="eyebrow">Our focus</div><h2>{service === 'soteria' ? 'A foundation for verifiable trust.' : 'From shared vision to opportunity.'}</h2></div></div><div className="service-grid">{data.features.map((feature, index) => <article className="service-card tone-mint" key={feature.title}><div className="service-card-top"><span className="service-number">0{index + 1}</span><ArrowUpRight className="text-primary" size={20} /></div><h3>{feature.title}</h3><p>{feature.text}</p></article>)}</div>{service === 'soteria' && <div className="mt-12"><div className="product-screen"><div className="screen-bar"><i /><i /><i /><span>SOTERIA / AIRLOCK — SECURE INGEST</span></div><img src={airlock} alt="Soteria Airlock interface showing file classification and ledger events" width={1342} height={768} loading="lazy" /></div><p className="form-note mt-4">Soteria Airlock development interface.</p></div>}</section><ContactBand /></main><SiteFooter /></>;
+}

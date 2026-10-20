@@ -1,0 +1,3 @@
+import { createFileRoute } from '@tanstack/react-router';
+import { TeamPage } from '@/components/team-page';
+export const Route = createFileRoute('/team')({ head: () => ({ meta: [{ title: 'Our Team | Grafinate Partners' }, { name: 'description', content: 'Meet the leadership of Grafinate Partners: Carlos Recalde, CEO; Bill Schreckenstein, CTO; and Rich Van Duysen, President.' }, { property: 'og:title', content: 'Our Team | Grafinate Partners' }, { property: 'og:description', content: 'Operators who have built, run, and secured enterprise technology.' }, { property: 'og:type', content: 'website' }] }), component: TeamPage });

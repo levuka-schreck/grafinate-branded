@@ -1,0 +1,3 @@
+import { createFileRoute } from '@tanstack/react-router';
+import { ServicePage } from '@/components/service-page';
+export const Route = createFileRoute('/channel-programs')({ head: () => ({ meta: [{ title: 'Technology Channel Programs | Grafinate Partners' }, { name: 'description', content: 'Channel strategy, partner enablement, and enterprise market development from Grafinate Partners.' }, { property: 'og:title', content: 'Technology Channel Programs | Grafinate Partners' }, { property: 'og:description', content: 'Connect innovative technology with enterprise opportunity.' }, { property: 'og:type', content: 'website' }, { name: 'twitter:card', content: 'summary_large_image' }] }), component: () => <ServicePage service="channels" /> });

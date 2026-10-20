@@ -1,0 +1,3 @@
+import { createFileRoute } from '@tanstack/react-router';
+import { ServicePage } from '@/components/service-page';
+export const Route = createFileRoute('/alliances')({ head: () => ({ meta: [{ title: 'Technical Alliances | Grafinate Partners' }, { name: 'description', content: 'Build enterprise-focused technology alliances with Grafinate Partners through solution alignment and coordinated market engagement.' }, { property: 'og:title', content: 'Technical Alliances | Grafinate Partners' }, { property: 'og:description', content: 'Complementary technology. Shared opportunity. Stronger enterprise connections.' }, { property: 'og:type', content: 'website' }, { name: 'twitter:card', content: 'summary_large_image' }] }), component: () => <ServicePage service="alliances" /> });
